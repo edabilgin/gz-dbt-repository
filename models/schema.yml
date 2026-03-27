@@ -5,7 +5,33 @@ sources:
     tables: 
     - name: sales 
       identifier: raw_gz_sales 
+      description: "Greenweez satiş verilerini içeren ham tablo"
+      columns:
+        - name: date_date
+          description: "Satisin gerçekleştiği tarih"
+        - name: orders_id
+          description: "Benzersiz sipariş numarasi" 
     - name: product
       identifier: raw_gz_product 
+      description: "Ürün bilgilerini ve maliyetlerini içeren tablo"
+      columns:
+        - name: products_id
+          description: "ürünün benzersiz kimlik numarasi"
+          tests: 
+            - unique
+            - not_null
+            
+        - name: purchase_price
+          description: "ürünün birim alis fiyati"
     - name: ship 
       identifier: raw_gz_ship
+      description: "nakliye ve gönderim detaylarini içeren tablo"
+      columns:
+        - name: orders_id
+          description: "ilgili siparişin numarasi"
+          tests:
+            - unique
+            - not_null
+            
+        - name: shipping_fee
+          description: "müşteriden alinan kargo ücreti"
