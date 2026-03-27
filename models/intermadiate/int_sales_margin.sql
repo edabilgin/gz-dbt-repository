@@ -8,7 +8,7 @@ product as (
 )
 select 
     s.date_date, 
-    s.orders_id, 
+    s.orders_id,
     s.products_id, 
     s.revenue, 
     s.quantity, 
