@@ -1,6 +1,6 @@
-with sales_margin as ( 
+with orders_margin as ( 
     select * from 
-{{ ref('int_sales_margin') }}
+{{ ref('int_orders_margin') }}
 ), 
 shipping as ( 
     select * from 
@@ -16,5 +16,5 @@ select
     sh.shipping_fee, 
     sh.logcost, 
     sh.ship_cost 
-from sales_margin s 
+from orders_margin s 
 left join shipping sh using (orders_id)
