@@ -12,7 +12,8 @@ select
     round(cast(o.margin as float64) + cast(sh.shipping_fee as float64) - (cast(sh.logcost as float64) + cast(sh.ship_cost as float64)), 2) as operational_margin, 
     o.revenue, 
     o.purchase_cost, 
-    o.margin, 
+    o.margin,
+    o.quantity,
     sh.shipping_fee, 
     sh.logcost, 
     sh.ship_cost 
