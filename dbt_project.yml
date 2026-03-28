@@ -39,5 +39,5 @@ models:
   gz-dbt-repository:
     mart:
       +materialized: table
-      finance:
-        +schema: finance
+    finance:
+      +schema: finance
