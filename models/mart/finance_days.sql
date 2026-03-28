@@ -1,3 +1,4 @@
+{{ config(materialized='table') }}
 with finance_days as(
     select
         date_date,
